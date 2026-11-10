@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Справка по командам</title>
+<style>
+  :root {
+    --bg: #f5f6f8; --card: #ffffff; --text: #1c1e21; --muted: #626a75;
+    --accent: #2b7de9; --code: #eef1f5; --border: #e1e4e8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a; --card: #1e2127; --text: #e8eaed; --muted: #9aa3af;
+      --accent: #5aa2ff; --code: #2a2e36; --border: #2e323a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 16px; background: var(--bg); color: var(--text);
+    font: 16px/1.5 -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 24px; margin: 8px 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 20px; }
+  .cmd {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 14px 16px; margin-bottom: 12px;
+  }
+  .cmd h2 { font-size: 18px; margin: 0 0 6px; }
+  .cmd p { margin: 6px 0; }
+  code {
+    background: var(--code); padding: 2px 6px; border-radius: 6px;
+    font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px;
+  }
+  .muted { color: var(--muted); font-size: 14px; }
+  .tbl { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin-top: 6px; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); font-size: 14px; }
+  th { color: var(--muted); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <h1>📖 Справка по командам</h1>
+  <p class="sub">Все команды работают и со слешем, и текстом без него.</p>
+
+  <section class="cmd">
+    <h2>💣 Мины</h2>
+    <p><code>/mines</code> или <code>Мины 100</code></p>
+    <p>Поле 5×5, на нём спрятано 6 мин. Открывайте клетки: 💎 — безопасно, 💣 — мина, и ставка сгорает. С каждой открытой клеткой множитель выигрыша растёт. Нажмите «💰 Забрать», чтобы взять выигрыш.</p>
+    <p>Минимальная ставка — 5 монет. Формат суммы:</p>
+    <div class="tbl">
+      <table>
+        <tr><th>Запись</th><th>Значение</th></tr>
+        <tr><td><code>100</code></td><td>100 монет</td></tr>
+        <tr><td><code>1к</code></td><td>1 000</td></tr>
+        <tr><td><code>2.5к</code></td><td>2 500</td></tr>
+        <tr><td><code>1кк</code></td><td>1 000 000</td></tr>
+        <tr><td><code>все</code></td><td>весь баланс</td></tr>
+      </table>
+    </div>
+    <p class="muted">Без суммы бот предложит выбрать ставку кнопками. Пока игра не закончена, начать новую нельзя.</p>
+  </section>
+
+  <section class="cmd">
+    <h2>💰 Баланс</h2>
+    <p><code>/balance</code> или <code>Баланс</code></p>
+    <p>Показывает, сколько у вас монет. Стартовый баланс — 1 000.</p>
+  </section>
+
+  <section class="cmd">
+    <h2>🎁 Бонус</h2>
+    <p><code>/bonus</code> или <code>Бонус</code></p>
+    <p>+500 монет раз в 24 часа. Бонус выдаётся в личке с ботом после простой капчи. Если написать команду в группе, бот пришлёт кнопку, которая откроет личный чат.</p>
+  </section>
+
+  <section class="cmd">
+    <h2>🏆 Топ</h2>
+    <p><code>/top</code> или <code>Топ</code></p>
+    <p>Десять самых богатых игроков.</p>
+  </section>
+
+  <section class="cmd">
+    <h2>👤 Профиль</h2>
+    <p><code>/profile</code> или <code>Профиль</code></p>
+    <p>Ваш Telegram ID, баланс и место в топе.</p>
+  </section>
+
+  <section class="cmd">
+    <h2>📖 Помощь</h2>
+    <p><code>/help</code> или <code>Помощь</code></p>
+    <p>Краткая справка по командам прямо в чате.</p>
+  </section>
+
+  <p class="muted">Монеты виртуальные и не имеют реальной стоимости.</p>
+</main>
+</body>
+</html>
